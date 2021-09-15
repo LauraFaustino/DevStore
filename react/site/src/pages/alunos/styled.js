@@ -6,7 +6,7 @@ const Container = styled.div`
     flex-direction: row;
     min-width: 100%;
 
-    .new-student-box {
+    .new-produto-box {
         display: flex;
         flex-direction: column;
 
@@ -16,24 +16,24 @@ const Container = styled.div`
             
     }
 
-    .bar-new-student {
-        border: 3px solid #986CDF;
+    .bar-new-produto {
+        border: 3px solid #12a0dc;
         border-radius: .5em;
         margin-right: .4em;
-        background-color: #986CDF;
+        background-color: #12a0dc;
     }
 
-    .text-new-student {
+    .text-new-produto {
         display: flex;
         flex-direction: row;
 
         font-size: 32px;
     }
-    .text-new-student div {
+    .text-new-produto div {
         font-weight: bolder;
     }
 
-    .input-new-student {
+    .input-new-produto {
         display: flex;
         flex-direction: row;
         padding-top: 2.4em;
@@ -52,13 +52,14 @@ const Container = styled.div`
     .input-left {
         display: flex;
         flex-direction: column;
-        margin-right: 3em;
+        margin-right: 2em;
+        
     }
 
-    .input-right {
+    .input-buttom{
         display: flex;
         flex-direction: column;
-        margin-bottom: 1em;
+        margin-left: 1.4em;
     }
 
     input {
@@ -73,7 +74,9 @@ const Container = styled.div`
 
     }
 
-    .name-student {
+    
+
+    .name-produto {
         font-size: 18px;
         color: #615858;
         width: 5.5em;
@@ -82,25 +85,46 @@ const Container = styled.div`
     }
 
 
-    .number-student {
+    .number-produto {
         font-size: 18px;
         color: #615858;
         width: 5.5em;
         font-weight: 800;
+        margin-left: 3em;
     }
 
-    .class-student {
+    .number-produto1{
+        font-size: 18px;
+        color: #615858;
+        width: 7.5em;
+        font-weight: 800;
+    }
+
+    .number-produto2{
+        font-size: 18px;
+        color: #615858;
+        width: 7.5em;
+        font-weight: 800;
+        margin-bottom: 10em;
+    }
+
+    .class-produto {
         font-size: 18px;
         color: #615858;
         margin-right: 0.8em;
         font-weight: 800;
+        margin-left: 2em;
+        width: 7.5em;
     }
 
-    .corse-student {
+    .corse-produto {
         font-size: 18px;
         color: #615858;
         margin-right: 1em;
         font-weight: 800;
+        margin-left: 2em;
+        margin-right: 4em;
+        
     }
 
 
@@ -114,7 +138,7 @@ const Container = styled.div`
         width: 106px;
         height: 36px;
 
-        background: #E911C6;
+        background: #12a0dc;
         border-radius: 44px;
         border: none;
         color: white;
@@ -123,7 +147,7 @@ const Container = styled.div`
         font-weight: bold;
     }
 
-    .student-registered-box {
+    .produto-registered-box {
         display: flex;
         flex-direction: column;
 
@@ -133,7 +157,7 @@ const Container = styled.div`
         margin-top: 2em;
         
     }
-    .text-registered-student {
+    .text-registered-produto {
         display: flex;
         flex-direction: row;
         font-weight: bolder;
@@ -221,7 +245,7 @@ const Container = styled.div`
     }
 
     thead {
-        background-color: #986CDF;
+        background-color: #6cc3df;
     }
 
     table {
@@ -253,7 +277,7 @@ const Container = styled.div`
         border-collapse: collapse;
     }
 
-    .linha-alternada {
+    .Linha-alternada {
         background-color: #fff;
     }
 
@@ -266,7 +290,7 @@ const Container = styled.div`
     }
 
     .button-create button:hover {
-        background-color: #aa3997;
+        background-color: #12a0dc;
         transition: 2s;
     }
 
@@ -276,7 +300,7 @@ const Container = styled.div`
 
     .absolute {
         color: white;
-        background-color: #DB21BD;
+        background-color: #12a0dc;
         border: 3px solid white;
         border-radius: 50%;
         position: absolute;
