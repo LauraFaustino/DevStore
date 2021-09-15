@@ -44,16 +44,16 @@ export default function Index() {
             let r = await api.inserir(nome, categoria, precoDe, precoPor, avaliacao, descricao, estoque, imagem);
 
             if (r.erro) 
-                toast.dark(r.erro);
+                toast.error(`${r.erro}`);
             else 
-                toast.success('Produto inserido!');
+                toast.success('✔️Produto inserido!');
         } else{
             let r = await api.alterar(idAlterando, nome, categoria, precoDe, precoPor, avaliacao, descricao, estoque, imagem);
            
             if (r.erro) 
-                toast.dark(r.erro);
+                toast.error(`${r.erro}`);
             else 
-                toast.success('Produto alterado!');
+                toast.success('✔️Produto alterado!');
 
         }
         loading.current.complete();
@@ -83,9 +83,9 @@ export default function Index() {
                 onClick: async () => {
                     let r = await api.remover(id);
                     if (r.erro)
-                        toast.dark(`${r.erro}`);
+                        toast.error(`${r.erro}`);
                     else {
-                        toast.success('Produto Removido');
+                        toast.success('✔️Produto Removido');
                         listar();
                     }
                 }
@@ -116,7 +116,7 @@ export default function Index() {
     return (
         <Container>
             <ToastContainer/>
-            <LoadingBar color='#000d1a' width= '1em' ref={loading} />
+            <LoadingBar color='#4d4dff' width= '2em' ref={loading} />
             <Menu />
             <Conteudo>
                 <Cabecalho />

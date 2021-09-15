@@ -22,57 +22,67 @@ app.post('/produto', async (req, resp) => {
 
         let e = await db.tb_produto.findOne({where: {nm_produto: nome } })
             if (e != null){
-                return resp.send({ erro: 'Produto já existe!' })
+                return resp.send({ erro: '❌ Produto já existe!' })
             }
 
             if(!nome || nome == ''){
-                return resp.send({erro: 'O campo Nome é obrigatório'})
+                return resp.send({erro: '❌ O campo Nome é obrigatório'})
             }
             if (!categoria || categoria == ''){
-                return resp.send({erro:'O campo Categoria é obrigatório'})
+                return resp.send({erro:'❌ O campo Categoria é obrigatório'})
             }
             if (!avaliacao || avaliacao == ''){
-                return resp.send({erro:'O campo Avaliação é obrigatório'})
+                return resp.send({erro:'❌ O campo Avaliação é obrigatório'})
             }
             if (!preco_de || preco_de == ''){
-                return resp.send({erro:'O campo Preço DE é obrigatório'})
+                return resp.send({erro:'❌ O campo Preço DE é obrigatório'})
             }
             if (!preco_por || preco_por == ''){
-                return resp.send({erro:'O campo Preco POR é obrigatório'})
+                return resp.send({erro:'❌ O campo Preco POR é obrigatório'})
             }
             if (!estoque || estoque == ''){
-                return resp.send({erro:'O campo Estoque é obrigatório'})
+                return resp.send({erro:'❌ O campo Estoque é obrigatório'})
             }
             if (!imagem || imagem == ''){
-                return resp.send({erro:'O campo Link Imagem é obrigatório'})
+                return resp.send({erro:'❌ O campo Link Imagem é obrigatório'})
             }
             if (!descricao || descricao == ''){
-                return resp.send({erro:'O campo Descrição é obrigatório'})
+                return resp.send({erro:'❌ O campo Descrição é obrigatório'})
             }
 
-            if (preco_de < 0 ) {
-                return resp.send({erro:'O campo Preço DE deve receber um número valido'})
+            if (preco_de <= 0 ) {
+                return resp.send({erro:'❌ O campo Preço DE deve receber um número valido'})
             }
             if(isNaN(preco_de)){
-                return resp.send({erro: 'Valor Preço DE inválido'});
+                return resp.send({erro: '❌ Valor Preço DE inválido'});
             }
             if (preco_por < 0 ) {
-                return resp.send({erro:'O campo Preço POR deve receber um número valido'})
+                return resp.send({erro:'❌ O campo Preço POR deve receber um número valido'})
             }
             if(isNaN(preco_por)){
-                return resp.send({erro: 'Valor Preço POR inválido'});
+                return resp.send({erro: '❌ Valor Preço POR inválido'});
             }
-            if (avaliacao < 0 ) {
-                return resp.send({erro:'O campo Avaliação deve receber um número valido'})
+            if (avaliacao <= 0 ) {
+                return resp.send({erro:'❌ O campo Avaliação deve receber um número valido'})
             }
             if(isNaN(avaliacao)){
-                return resp.send({erro: 'Valor Avaliação inválido'});
+                return resp.send({erro: '❌ Valor Avaliação inválido'});
             }
-            if (estoque < 0 ) {
-                return resp.send({erro:'O campo Estoque deve receber um número valido'})
+            if (estoque <= 0 ) {
+                return resp.send({erro:'❌ O campo Estoque deve receber um número valido'})
             }
             if(isNaN(estoque)){
-                return resp.send({erro: 'Valor Estoque inválido'});
+                return resp.send({erro: '❌ Valor Estoque inválido'});
+            }
+
+            if (nome.length < 3){
+                return resp.send({erro: '❌ O campo Nome precisa de mais de 3 caracteres'});
+            }
+            if (descricao.length < 3){
+                return resp.send({erro: '❌ O campo Descrição precisa de mais de 3 caracteres'});
+            }
+            if (categoria.length < 3){
+                return resp.send({erro: '❌ O campo Categoria precisa de mais de 3 caracteres'});
             }
 
         let p = await db.tb_produto.create({
