@@ -116,7 +116,7 @@ export default function Index() {
     return (
         <Container>
             <ToastContainer/>
-            <LoadingBar color='#4d4dff' width= '2em' ref={loading} />
+            <LoadingBar color='#4d4dff' height= '5px' ref={loading} />
             <Menu />
             <Conteudo>
                 <Cabecalho />
