@@ -51,25 +51,25 @@ app.post('/produto', async (req, resp) => {
             }
 
             if (preco_de <= 0 ) {
-                return resp.send({erro:' O campo Preço DE deve receber um número valido'})
+                return resp.send({erro:' O campo Preço DE deve receber um número negativo'})
             }
             if(isNaN(preco_de)){
                 return resp.send({erro: ' Valor Preço DE inválido'});
             }
-            if (preco_por < 0 ) {
-                return resp.send({erro:' O campo Preço POR deve receber um número valido'})
+            if (preco_por <= 0 ) {
+                return resp.send({erro:' O campo Preço POR deve receber um número negativo'})
             }
             if(isNaN(preco_por)){
                 return resp.send({erro: ' Valor Preço POR inválido'});
             }
-            if (avaliacao <= 0 ) {
-                return resp.send({erro:' O campo Avaliação deve receber um número valido'})
+            if (avaliacao < 0 ) {
+                return resp.send({erro:' O campo Avaliação deve receber um número negativo'})
             }
             if(isNaN(avaliacao)){
                 return resp.send({erro: ' Valor Avaliação inválido'});
             }
-            if (estoque <= 0 ) {
-                return resp.send({erro: ' O campo Estoque deve receber um número valido'})
+            if (estoque < 0 ) {
+                return resp.send({erro: ' O campo Estoque deve receber um número negativo'})
             }
             if(isNaN(estoque)){
                 return resp.send({erro: ' Valor Estoque inválido'});
